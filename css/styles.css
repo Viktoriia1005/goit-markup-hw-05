@@ -110,7 +110,7 @@ a {text-decoration: none;}
 
     .site-link::after {
         content: "";
-        position: absolute;
+        position: relative;
         left: 0;
         bottom: 0;
         display: block;
@@ -118,6 +118,10 @@ a {text-decoration: none;}
         height: 4px;
         background-color: var(--accent-color);
         border-radius: 2px;
+        opacity: 0;
+    }
+    .site-link.current::after {
+        opacity: 1;
     }
 
         /* auth nav */
