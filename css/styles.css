@@ -77,6 +77,7 @@ a {text-decoration: none;}
 
     .page-header {
         border-bottom: 1px solid #ECECEC;}
+
     .page-header .container {
         display: flex;
         align-items: center;
@@ -108,11 +109,13 @@ a {text-decoration: none;}
         
     .site-link:hover,
     .site-link:focus {color: var(--accent-color);}
-    .site-link.current {color: var(--accent-color);}
+    
+    .site-link.current {color: var(--accent-color);
+        position: relative;}
 
     .site-link::after {
         content: "";
-        position: relative;
+        position: absolute;
         left: 0;
         bottom: 0;
         display: block;
