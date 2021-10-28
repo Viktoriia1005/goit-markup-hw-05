@@ -223,7 +223,9 @@ a {text-decoration: none;}
         left: 0;
         width: 100%;
         height: 100%;
-        background-color: rgba(0, 0, 0, 0.2);;
+        background-color: rgba(0, 0, 0, 0.2);
+        opacity: 1;
+        transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
     }
 
     .backdrop.is-hidden {
@@ -235,12 +237,16 @@ a {text-decoration: none;}
         position: absolute;
         top: 50%;
         left: 50%;
-        transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%) scale(1);
         width: 528px;
         height: 581px;
         background: #FFFFFF;
         box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
         border-radius: 4px;
+    }
+
+    .backdrop.is-hidden .modal {
+        transform: translate(-50%, -50%) scale(0.9);
     }
 
     .close-modal-button {
@@ -620,7 +626,8 @@ a {text-decoration: none;}
         background-color: rgba(33, 150, 243, 0.9);
         opacity: 0;
         transform: translateY(100%);
-        transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+        transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1),
+        opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
         }
 
     .text-description {
@@ -635,7 +642,8 @@ a {text-decoration: none;}
         color: #FFFFFF;
         opacity: 0;
         transform: translateY(100%);
-        transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+        transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1),
+        opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
         }
 
     .work-item:hover .text-description,
